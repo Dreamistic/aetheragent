@@ -1,0 +1,8 @@
+tunnel: your-tunnel-id
+credentials-file: C:\Users\your-user\.cloudflared\your-tunnel-id.json
+protocol: http2
+
+ingress:
+  - hostname: your-domain.example.com
+    service: http://localhost:8000
+  - service: http_status:404

@@ -1,0 +1,44 @@
+app:
+  name: VAEAGENT
+  api_prefix: /api
+  default_locale: zh-Hans
+  default_theme: light
+
+security:
+  access_token_minutes: 1440
+  refresh_token_days: 30
+
+agent:
+  provider: openrouter
+  base_url: https://openrouter.ai/api/v1
+  model: z-ai/glm-5.2
+  openrouter_provider: novita/fp8
+  temperature: 0.7
+  max_tokens: 4096
+  max_tool_rounds: 4
+  stream_chunk_delay_ms: 0
+
+mcp:
+  enabled: true
+  protocol_version: "2025-06-18"
+
+sessions:
+  context_auto_switch_enabled: true
+  session_timeout_minutes: 30
+  carried_over_message_count: 6
+  carried_over_expire_threshold: 10
+  auto_summary_enabled: true
+  auto_switch_min_messages: 24
+
+tools:
+  allow_admin_local_tools: false
+  default_enabled:
+    create_task: true
+    list_tasks: true
+    update_task_status: true
+    save_memory: true
+    list_memories: true
+    add_calendar_event: true
+    list_calendar_events: true
+    ask_for_info: true
+    ask_for_confirmation: true

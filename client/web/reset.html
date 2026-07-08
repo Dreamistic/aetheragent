@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>Reset VAEAGENT Cache</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      font-family: "LXGW WenKai", "Microsoft YaHei UI", "Segoe UI", sans-serif;
+      color: #111827;
+      background: #ffffff;
+    }
+    main {
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>正在更新 VAEAGENT</h1>
+    <p>正在清理旧版网页缓存，稍后会自动返回聊天页。</p>
+  </main>
+  <script>
+    async function reset() {
+      if ('serviceWorker' in navigator) {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(registrations.map((registration) => registration.unregister()));
+      }
+      if (window.caches) {
+        const keys = await caches.keys();
+        await Promise.all(keys.map((key) => caches.delete(key)));
+      }
+      sessionStorage.setItem('vaeagent-sw-reset-v2', 'done');
+      location.replace('/?fresh=' + Date.now() + '#/chat');
+    }
+    reset().catch(() => {
+      location.replace('/?fresh=' + Date.now() + '#/chat');
+    });
+  </script>
+</body>
+</html>

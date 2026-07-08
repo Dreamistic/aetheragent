@@ -1,0 +1,59 @@
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+cloudflared-config.yml
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Runtime data and logs
+backend/data/
+logs/
+*.log
+*.sqlite
+*.sqlite3
+*.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Flutter / Dart
+**/.dart_tool/
+**/.flutter-plugins
+**/.flutter-plugins-dependencies
+**/.packages
+**/build/
+**/coverage/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.pub-cache/
+.pub/
+app.*.symbols
+app.*.map.json
+
+# IDE and OS files
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local build artifacts
+*.exe
+*.dll
+*.pdb
+*.ilk
+*.obj
