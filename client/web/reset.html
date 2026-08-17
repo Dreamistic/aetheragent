@@ -5,7 +5,7 @@
   <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
-  <title>Reset VAEAGENT Cache</title>
+  <title>Reset Aether Cache</title>
   <style>
     body {
       margin: 0;
@@ -24,7 +24,7 @@
 </head>
 <body>
   <main>
-    <h1>正在更新 VAEAGENT</h1>
+    <h1>正在更新 Aether</h1>
     <p>正在清理旧版网页缓存，稍后会自动返回聊天页。</p>
   </main>
   <script>
@@ -37,7 +37,7 @@
         const keys = await caches.keys();
         await Promise.all(keys.map((key) => caches.delete(key)));
       }
-      sessionStorage.setItem('vaeagent-sw-reset-v2', 'done');
+      sessionStorage.setItem('aether-sw-reset-v2', 'done');
       location.replace('/?fresh=' + Date.now() + '#/chat');
     }
     reset().catch(() => {

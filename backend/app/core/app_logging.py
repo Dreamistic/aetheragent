@@ -11,7 +11,7 @@ from backend.app.core.config import PROJECT_ROOT
 
 
 LOG_DIR = PROJECT_ROOT / "logs"
-APP_LOG_PATH = LOG_DIR / "vaeagent.log"
+APP_LOG_PATH = LOG_DIR / "aether.log"
 EVENT_LOG_PATH = LOG_DIR / "events.jsonl"
 
 _setup_done = False
@@ -24,7 +24,7 @@ def setup_logging() -> None:
         return
     LOG_DIR.mkdir(parents=True, exist_ok=True)
 
-    logger = logging.getLogger("vaeagent")
+    logger = logging.getLogger("aether")
     logger.setLevel(logging.INFO)
     logger.propagate = False
 
@@ -51,7 +51,7 @@ def setup_logging() -> None:
 
 def get_logger(name: str) -> logging.Logger:
     setup_logging()
-    return logging.getLogger(f"vaeagent.{name}")
+    return logging.getLogger(f"aether.{name}")
 
 
 def new_trace_id(prefix: str = "trace") -> str:
@@ -69,7 +69,7 @@ def log_event(category: str, event: str, **fields: Any) -> None:
     with _event_lock:
         with EVENT_LOG_PATH.open("a", encoding="utf-8") as f:
             f.write(line + "\n")
-    logging.getLogger(f"vaeagent.{category}").info("%s %s", event, line)
+    logging.getLogger(f"aether.{category}").info("%s %s", event, line)
 
 
 def read_recent_events(limit: int = 200) -> list[dict[str, Any]]:

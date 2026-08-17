@@ -1,11 +1,11 @@
 {
-    "name": "VAEAGENT",
-    "short_name": "VAEAGENT",
+    "name": "Aether",
+    "short_name": "Aether",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#FFFFFF",
     "theme_color": "#111827",
-    "description": "VAEAGENT multi-user agent client.",
+    "description": "Aether multi-user agent client.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

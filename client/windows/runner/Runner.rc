@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "vaeagent_client" "\0"
+            VALUE "FileDescription", "aether_client" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "vaeagent_client" "\0"
+            VALUE "InternalName", "aether_client" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2026 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "vaeagent_client.exe" "\0"
-            VALUE "ProductName", "vaeagent_client" "\0"
+            VALUE "OriginalFilename", "aether_client.exe" "\0"
+            VALUE "ProductName", "aether_client" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

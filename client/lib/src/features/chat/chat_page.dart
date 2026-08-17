@@ -597,7 +597,7 @@ class _Sidebar extends StatelessWidget {
                 const _CloudLogo(size: 38),
                 const SizedBox(width: 10),
                 Text(
-                  'VAEAGENT',
+                  'Aether',
                   style: Theme.of(context)
                       .textTheme
                       .titleMedium

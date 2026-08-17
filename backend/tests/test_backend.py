@@ -14,7 +14,7 @@ from fastapi.testclient import TestClient
 def client(monkeypatch):
     db_file = tempfile.NamedTemporaryFile(suffix=".db", delete=False)
     db_file.close()
-    monkeypatch.setenv("VAEAGENT_DATABASE_URL", f"sqlite:///{db_file.name}")
+    monkeypatch.setenv("AETHER_DATABASE_URL", f"sqlite:///{db_file.name}")
     monkeypatch.delenv("OPENAI_API_KEY", raising=False)
     monkeypatch.delenv("OPENROUTER_API_KEY", raising=False)
 

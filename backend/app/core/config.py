@@ -27,15 +27,20 @@ def _deep_get(data: dict[str, Any], dotted: str, default: Any = None) -> Any:
 class Settings:
     def __init__(self, raw: dict[str, Any]):
         self.raw = raw
-        self.app_name = str(_deep_get(raw, "app.name", "VAEAGENT"))
+        self.app_name = str(_deep_get(raw, "app.name", "Aether"))
         self.api_prefix = str(_deep_get(raw, "app.api_prefix", "/api"))
         self.default_locale = str(_deep_get(raw, "app.default_locale", "zh-Hans"))
         self.default_theme = str(_deep_get(raw, "app.default_theme", "light"))
-        self.database_url = os.getenv(
-            "VAEAGENT_DATABASE_URL",
-            f"sqlite:///{(DATA_DIR / 'vaeagent.db').as_posix()}",
+        self.database_url = (
+            os.getenv("AETHER_DATABASE_URL")
+            or os.getenv("VAEAGENT_DATABASE_URL")
+            or f"sqlite:///{(DATA_DIR / 'aether.db').as_posix()}"
         )
-        self.secret_key = os.getenv("VAEAGENT_SECRET_KEY", "dev-secret-change-me")
+        self.secret_key = (
+            os.getenv("AETHER_SECRET_KEY")
+            or os.getenv("VAEAGENT_SECRET_KEY")
+            or "dev-secret-change-me"
+        )
         self.agent_provider = str(_deep_get(raw, "agent.provider", "openai"))
         self.openai_api_key = os.getenv("OPENAI_API_KEY") or os.getenv("OPENROUTER_API_KEY", "")
         self.openai_base_url = os.getenv("OPENAI_BASE_URL", str(_deep_get(raw, "agent.base_url", "")))

@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
-import 'package:vaeagent_client/src/core/api_client.dart';
+import 'package:aether_client/src/core/api_client.dart';
 
 void main() {
   test('chatStream parses tool events from ndjson', () async {

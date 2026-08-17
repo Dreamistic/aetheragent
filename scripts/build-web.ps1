@@ -8,7 +8,7 @@ try {
   if (Test-Path $bootstrap) {
     $content = Get-Content -LiteralPath $bootstrap -Raw
     $content = $content -replace 'serviceWorkerSettings:\s*\{\s*serviceWorkerVersion:\s*"[^"]+"\s*/\* Flutter''s service worker is deprecated and will be removed in a future Flutter release\. \*/\s*\}', 'serviceWorkerSettings: null'
-    $content = $content -replace '"mainJsPath":"main\.dart\.js"', '"mainJsPath":"main.dart.js?v=vaeagent-20260707-1"'
+    $content = $content -replace '"mainJsPath":"main\.dart\.js"', '"mainJsPath":"main.dart.js?v=aether-20260707-1"'
     Set-Content -LiteralPath $bootstrap -Value $content -Encoding UTF8
   }
 

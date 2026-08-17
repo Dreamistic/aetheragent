@@ -41,7 +41,7 @@ class _AuthPageState extends ConsumerState<AuthPage> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const Text(
-                  'VAEAGENT',
+                  'Aether',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.w700),
                 ),

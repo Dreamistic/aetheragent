@@ -1,2 +1,2 @@
-"""VAEAGENT backend package."""
+"""Aether backend package."""
 

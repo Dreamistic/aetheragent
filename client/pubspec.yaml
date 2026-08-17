@@ -1,5 +1,5 @@
-name: vaeagent_client
-description: Cross-platform Flutter client for VAEAGENT.
+name: aether_client
+description: Cross-platform Flutter client for Aether.
 publish_to: "none"
 version: 0.1.0+1
 

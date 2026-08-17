@@ -10,7 +10,7 @@ from backend.app.db.models import Base
 from backend.app.db.session import engine
 
 
-TEST_AVATAR_PATH = os.getenv("VAEAGENT_TEST_AVATAR_PATH", "")
+TEST_AVATAR_PATH = os.getenv("AETHER_TEST_AVATAR_PATH") or os.getenv("VAEAGENT_TEST_AVATAR_PATH", "")
 
 
 def init_db() -> None:

@@ -1,10 +1,10 @@
-# VAEAGENT
+# Aether
 
-VAEAGENT is a new multi-user Agent application with:
+Aether is a modern multi-user AI Agent application with:
 
 - Flutter cross-platform client source in `client/`
 - FastAPI backend in `backend/`
-- SQLite local storage for Windows 11 testing
+- SQLite local storage
 - User registration/login with reserved email workflows
 - Per-user sessions, messages, settings, tools, memory, tasks, and calendar data
 - OpenRouter/OpenAI-compatible Chat Completions streaming with app-level NDJSON events
@@ -14,7 +14,6 @@ VAEAGENT is a new multi-user Agent application with:
 ## Backend
 
 ```powershell
-cd path\to\VAEAGENT
 pip install -r requirements.txt
 $env:OPENROUTER_API_KEY="your-key"   # optional; without it the backend uses a local fallback reply
 uvicorn backend.app.main:app --reload --port 8000
@@ -41,12 +40,10 @@ pytest -q backend\tests
 
 ## Flutter Client
 
-Flutter 3.44.4 has been installed at `C:\src\flutter`, and `C:\src\flutter\bin` has been added to the current user's PATH.
-
-Open a new PowerShell window so PATH is refreshed, then run:
+Ensure Flutter is installed and available in PATH, then run:
 
 ```powershell
-cd path\to\VAEAGENT\client
+cd client
 flutter pub get
 flutter run -d windows
 ```
@@ -64,7 +61,6 @@ The client defaults to `http://127.0.0.1:8000` and supports Simplified Chinese, 
 The Flutter Web platform is enabled. Build the web app, then start FastAPI:
 
 ```powershell
-cd path\to\VAEAGENT
 .\scripts\build-web.ps1
 .\scripts\run-backend.ps1
 ```

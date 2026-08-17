@@ -219,7 +219,7 @@ def _initialize_http_session(client: httpx.Client, server: McpServer) -> str | N
         "params": {
             "protocolVersion": MCP_PROTOCOL_VERSION,
             "capabilities": {},
-            "clientInfo": {"name": "vaeagent", "version": "0.1.0"},
+            "clientInfo": {"name": "aether", "version": "0.1.0"},
         },
     }
     response = _raw_post(client, server, payload)
@@ -334,7 +334,7 @@ def _mcp_stdio_request(server: McpServer, method: str, params: dict[str, Any]) -
                 "params": {
                     "protocolVersion": MCP_PROTOCOL_VERSION,
                     "capabilities": {},
-                    "clientInfo": {"name": "vaeagent", "version": "0.1.0"},
+                    "clientInfo": {"name": "aether", "version": "0.1.0"},
                 },
             },
         )

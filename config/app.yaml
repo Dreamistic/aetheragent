@@ -1,5 +1,5 @@
 app:
-  name: VAEAGENT
+  name: Aether
   api_prefix: /api
   default_locale: zh-Hans
   default_theme: light

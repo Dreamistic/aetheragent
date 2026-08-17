@@ -10,11 +10,11 @@ import 'src/features/chat/chat_page.dart';
 import 'src/l10n/app_localizations.dart';
 
 void main() {
-  runApp(const ProviderScope(child: VaeAgentApp()));
+  runApp(const ProviderScope(child: AetherApp()));
 }
 
-class VaeAgentApp extends ConsumerWidget {
-  const VaeAgentApp({super.key});
+class AetherApp extends ConsumerWidget {
+  const AetherApp({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -35,7 +35,7 @@ class VaeAgentApp extends ConsumerWidget {
     );
 
     return MaterialApp.router(
-      title: 'VAEAGENT',
+      title: 'Aether',
       debugShowCheckedModeBanner: false,
       locale: LocaleParser.parse(state.locale),
       supportedLocales: AppLocalizations.supportedLocales,
